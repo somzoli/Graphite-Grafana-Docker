@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+    graphite-statsd:
+        container_name: graphite
+        restart: on-failure
+        volumes:
+            - ./graphite-storage:/opt/graphite/storage
+        ports:
+            - '81:80'
+            - '2003-2004:2003-2004'
+            - '2023-2024:2023-2024'
+            - '8125:8125/udp'
+            - '8126:8126'
+        image: graphiteapp/graphite-statsd
+    grafana-oss:
+        container_name: grafana
+        restart: on-failure
+        volumes:
+                - ./grafana-config:/etc/grafana/
+                - ./grafana-data:/var/lib/grafana
+        ports:
+                - '3000:3000'
+        image: grafana/grafana-oss
