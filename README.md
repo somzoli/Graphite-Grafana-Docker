@@ -20,3 +20,4 @@ This setup does not contain SSL configs. If you want to secure communications, p
 | Grafana   | ./grafana-config              | /etc/grafana/             |
 | Grafana   | ./grafana-data                | /var/lib/grafana          |
 | Graphite  | ./graphite-storage            | /opt/graphite/storage     |
+| Graphite  | ./graphite-config	            | /opt/graphite/conf	|

@@ -4,6 +4,7 @@ services:
         container_name: graphite
         restart: on-failure
         volumes:
+            - ./graphite-config:/opt/graphite/conf
             - ./graphite-storage:/opt/graphite/storage
         ports:
             - '81:80'
